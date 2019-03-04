@@ -1,11 +1,11 @@
 require 'rails_helper'
+require 'faker'
 
-RSpec.describe User, type: :model do
+RSpec.describe Item, type: :model do
 
-@item = Item.create(:item)
-
-it "has a valid factory" do
-  expect(build(:item)).to be_valid
+before(:each) do
+@category = Category.create(name: Faker::Lorem.characters(6))
+@item = Item.create(title: Faker::Lorem.characters(6), description: Faker::ChuckNorris.fact, price: rand(1..1000), category_id: @category.id)
 end
 
 context "validation" do
@@ -13,21 +13,19 @@ context "validation" do
     expect(@item).to be_a(Item)
   end
   describe "#title" do
-    it { expect(@item).to validate_presence_of(:title) }
-    it { expect(@item).to validate_uniqueness_of(:title) }
-    it {expect(@item).to validate_length_of(:title).to_be_at_least(6)}
+    it { should validate_presence_of(:title) }
+    it { should validate_uniqueness_of(:title) }
+    it { should validate_length_of(:title).is_at_least(3)}
   end
   describe "#description" do
-    it { expect(@item).to validate_presence_of(:description) }
-    it { expect(@item).to validate_uniqueness_of(:description) }
-    it {expect(@item).to validate_length_of(:description).to_be_at_least(10)}
+    it { should validate_presence_of(:description) }
+    it { should validate_length_of(:description).is_at_least(10)}
   end
   describe "#price" do
   end
 end
 context "associations" do
-    it { expect(@item).to have_many(:users)}
-    it { expect(@item).to have_many(:purchases)}
+    it { should have_many :purchases}
     end
 
 

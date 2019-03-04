@@ -2,28 +2,27 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
-@user = User.create(:user)
+  before(:each) do
+  @user = User.create(email: Faker::Internet.email, password: Faker::Space.agency)
 
-it "has a valid factory" do
-  expect(build(:user)).to be_valid
-end
-
+  end
 context "validation" do
   it "is valid with valid attributes" do
     expect(@user).to be_a(User)
+    expect(@user).to be_valid
   end
   describe "#email" do
-    it { expect(@user).to validate_presence_of(:email) }
-    it { expect(@user).to validate_uniqueness_of(:email) }
-    it { is_expected.to allow_value("email@addresse.foo").for(:email) }
-    it { is_expected.to_not allow_value("foo").for(:email) }
-    it { is_expected.to_not allow_value("jean@examplecom").for(:email) }
+    it { should validate_presence_of :email }
+    it { should validate_presence_of :email }
+  end
+  describe "#password" do
+    it { should validate_presence_of :password}
   end
 end
 
 context "associations" do
-  it { expect(@user).to have_many(:items)}
-  it { expect(@user).to have_many(:purchases)}
+  it { should have_many(:items)}
+  it { should have_many(:purchases)}
   end
 
 end

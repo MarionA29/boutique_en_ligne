@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
-@item = FactoryBot.create(:item)
+@item = Item.create(:item)
 
 it "has a valid factory" do
   expect(build(:item)).to be_valid

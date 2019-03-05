@@ -8,5 +8,9 @@ Item.destroy_all
 end
 
 7.times do
-  Item.create!( title: Faker::Lorem.characters(6), description: Faker::ChuckNorris.fact, price: rand(1..1000))
+  Item.create!( title: Faker::Creature::Cat.name, description: Faker::ChuckNorris.fact, price: rand(1..1000))
+end
+
+15.times do
+  Purchase.create!(user_id: rand(User.first.id..User.last.id), item_id: rand(Item.first.id..Item.last.id))
 end

@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ProjetBoutiqueEnLigne</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+<head>
+<%= render 'layouts/head' %>
+</head>
+<body>
+<header>
+<%= render 'layouts/navbar' %>
+</header>
+<!-- Alerts -->
+<%= render 'layouts/alerts' %>
+<!-- Alerts -->
+<%= yield %>
+    <!-- Footer -->
+<%= render 'layouts/footer' %>
+    <!-- Footer -->
+</body>
 </html>

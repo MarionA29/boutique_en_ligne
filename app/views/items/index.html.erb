@@ -1,2 +1,11 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+
+<body>
+  <center>
+  <div class="row">
+  <%= render partial: 'item', collection: @items %>
+  </div>
+  </center>
+</body>
+</html>

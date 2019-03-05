@@ -4,6 +4,5 @@ class Item < ApplicationRecord
   validates :price, numericality: {greater_than: 1}
   has_many :purchases, dependent: :destroy
   has_many :users, through: :purchases
-  belongs_to :category
   has_one_attached :picture
 end

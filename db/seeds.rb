@@ -14,7 +14,7 @@ end
 end
 
 7.times do
-  Item.create!( title: Faker::Lorem.characters(6), description: Faker::ChuckNorris.fact, price: rand(1..1000), category_id: rand(Category.first.id..Category.last.id))
+  Item.create!( title: Faker::Creature::Cat.name, description: Faker::ChuckNorris.fact, price: rand(1..1000), category_id: rand(Category.first.id..Category.last.id))
 end
 
 15.times do

@@ -1,12 +1,63 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-          <% @cart_items.each do |item| %>
-					<li class="row">
-						<span class="quantity">1</span>
-						<span class="itemName"><%= item.item.title %></span>
-						<span class="popbtn"><a class="arrow"></a></span>
-						<span class="price"><%= item.item.price %></span>
-					</li>
-          <% end %>
-          Total : <%= @total %>
-          <hr>
-          <%= link_to "Passer commande", new_user_order_path %>
+
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-12 col-md-10 col-md-offset-1">
+                      <table class="table table-hover">
+                          <thead>
+                              <tr>
+                                  <th>Product</th>
+                                  <th> </th>
+                                  <th> </th>
+                                  <th> </th>
+                                  <th class="text-center">Price</th>
+                                  <th> </th>
+                              </tr>
+                          </thead>
+
+
+                          <tbody>
+                            <% @cart_items.each do |item| %>
+                              <tr>
+                                  <td class="col-sm-8 col-md-6">
+                                  <div class="media">
+
+                                      <a class="thumbnail pull-left" href="#"><%= image_tag  item.item.picture, alt: 'picture', size: "72x72" %> </a>
+                                      <div class="media-body"><h4 class="media-heading"><%= item.item.title %></h4></div>
+                                  </div>
+                                  </td>
+
+                                  <td> </td>
+                                  <td> </td>
+                                  <td> </td>
+
+                                  <td class="col-sm-1 col-md-1 text-center"><%= item.item.price %></td>
+                                  <td class="col-sm-1 col-md-1"><button type="button" class ="pull-right"> Remove </button></td>
+                              </tr>
+                              <% end %>
+
+                              <tr>
+
+                                  <td>   </td>
+                                  <td>   </td>
+                                  <td>   </td>
+                                  <td>   </td>
+                                  <td><h3>Total</h3></td>
+                                  <td class="text-right"><h3><strong><%= @total %></strong></h3></td>
+                              </tr>
+                              <tr>
+                                  <td>   </td>
+                                  <td>   </td>
+                                  <td>   </td>
+                                  <td>   </td>
+                                  <td><button type="button" class="btn btn-default"><%= link_to "Trouver d'autres châtons", root_path %></button></td>
+                                  <td><button type="button" class="btn btn-success"><%= link_to "Passer commande", new_user_order_path %></button></td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>

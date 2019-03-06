@@ -9,6 +9,10 @@ def create
     redirect_to user_cart_path(@cart.id,@cart.id)
 end
 
+def destroy
+  @cart_item = CartItem.find(params[:id])
+  @cart_item.destroy
+end
 def cart_item_params
   params.permit(:item_id, :cart_id)
 end

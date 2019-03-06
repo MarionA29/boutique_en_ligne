@@ -8,6 +8,9 @@
     <p class="card-text"><%= item.price %></p>
   </div>
   <div class="card-body">
-    <a href="#" class="card-link"><a href="/items/<%= item.id %>">Voir l'évènement</a>
+    <a href="#" class="card-link"><a href="/items/<%= item.id %>">Voir le detail</a>
+    <% if current_user != nil %>
+    <%= link_to "Ajouter au panier", cart_items_path(cart_id: Cart.find_by(user_id: current_user.id), item_id: item.id), class:"card-link", method: :post %>
+    <% end %>
   </div>
 </div>

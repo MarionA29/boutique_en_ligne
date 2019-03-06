@@ -46,7 +46,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'devise', '~> 4.2'
 
 #Quickly integrate Checkout into your Ruby on Rails-based site to provide your users with a streamlined, mobile-ready payment experience.
-gem 'stripe', '~> 1.57', '>= 1.57.1'
+gem 'stripe'
 
 #sending email
 gem 'sendgrid-ruby', '~> 5.3'

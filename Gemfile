@@ -51,6 +51,8 @@ gem 'stripe', '~> 1.57', '>= 1.57.1'
 #sending email
 gem 'sendgrid-ruby', '~> 5.3'
 
+#dotenv
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

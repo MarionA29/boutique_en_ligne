@@ -1,5 +1,7 @@
+
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
           <div class="container">
               <div class="row">
@@ -11,7 +13,9 @@
                                   <th> </th>
                                   <th> </th>
                                   <th> </th>
+                                  <th> </th>
                                   <th class="text-center">Price</th>
+                                  <th class="text-center">Remove</th>
                                   <th> </th>
                               </tr>
                           </thead>
@@ -31,15 +35,15 @@
                                   <td> </td>
                                   <td> </td>
                                   <td> </td>
-
+                                  <td> </td>
                                   <td class="col-sm-1 col-md-1 text-center"><%= item.item.price %></td>
 
-                                  <td><%= link_to "X", cart_item_path(item.item.id), :method => 'delete', style:"color:red;font-weight:600;"%></td>
+                                  <td class="text-center"><%= link_to "X", cart_item_path(item.item.id), :method => 'delete', style:"color:red;font-weight:600;"%></td>
                               </tr>
                               <% end %>
 
                               <tr>
-
+                                  <td>   </td>
                                   <td>   </td>
                                   <td>   </td>
                                   <td>   </td>

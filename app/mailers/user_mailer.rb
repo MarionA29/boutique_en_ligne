@@ -6,7 +6,7 @@ class UserMailer < ApplicationMailer
     @user = User.find(current_user.user_id)
     #@url= 'https://boutiqueenlignethp.herokuapp.com/'
 
-    mail(to:@user.email,subject: 'Commande validée! ')
+    mail(to:@user.email, subject: 'Commande validée! ')
   end
 
 end

@@ -16,13 +16,13 @@ On a opté pour la version minimaliste, tu peux :
 Et... voilà !
 
 Si tu as envie de voir ce que ça donne en local, rien de plus simple :
-$	git clone https://github.com/MarionA29/boutique_en_ligne.git
-$	bundle install 
-$	rails db:create
-$	rails db:migrate
-$	rails db:seed
-$	rails server 
-$	localhost (http://localhost:3000) 
+- $	git clone https://github.com/MarionA29/boutique_en_ligne.git
+- $	bundle install 
+- $	rails db:create
+- $	rails db:migrate
+- $	rails db:seed
+- $	rails server 
+- $	localhost (http://localhost:3000) 
 
 Need: 
 -Ruby > 2.5.1 

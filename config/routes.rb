@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :cart_items, only: [:new, :create, :destroy]
   resources :charges
+  resources :users
 end

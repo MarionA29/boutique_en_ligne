@@ -21,8 +21,7 @@ context "validation" do
 end
 
 context "associations" do
-  it { should have_many(:items)}
-  it { should have_many(:purchases)}
+  it { should have_one(:cart)}
   end
 
 end

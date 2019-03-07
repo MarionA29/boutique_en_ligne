@@ -12,6 +12,8 @@
     <br>
     <h6>Price : <%= @item.price %></h6>
     <br>
+    <%= link_to "Ajouter au panier", cart_items_path(cart_id: Cart.find_by(user_id: current_user.id), item_id: @item.id), class:"card-link", method: :post %>
+
   </div>
-</div>
+  </div>
 </div>

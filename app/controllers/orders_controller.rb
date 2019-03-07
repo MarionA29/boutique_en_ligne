@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   def show
+    @orders = Order.where(user_id: current_user.id)
+    @list_orders = CartItem.where(cart_id: current_user.id)
   end
 
   def new
@@ -13,7 +15,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-
     @order = Order.new(cart_id: current_user.id, user_id: current_user.id, stripe_customer_id: params[:stripeToken])
     @total = 0.00
     @cart = CartItem.where(cart_id: current_user.id)
@@ -24,6 +25,8 @@ class OrdersController < ApplicationController
     if @order.save
       puts "ici"
       flash[:success] = "Ta commande est confirmée !"
+      @cart_item = CartItem.where(cart_id: current_user.id)
+      @cart_item.delete_all
       redirect_to root_path
     else
       flash[:error] = "Ta commande n'a pas pu être confirmée ! Merde alors :("

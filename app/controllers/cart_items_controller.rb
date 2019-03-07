@@ -16,6 +16,7 @@ def destroy
   @item.destroy
   redirect_to user_cart_path(@cart.id, @cart.id )
 end
+
 def cart_item_params
   params.permit(:item_id, :cart_id)
 end

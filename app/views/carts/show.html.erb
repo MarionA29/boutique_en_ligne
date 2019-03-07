@@ -1,8 +1,6 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-
           <div class="container">
               <div class="row">
                   <div class="col-sm-12 col-md-10 col-md-offset-1">
@@ -55,7 +53,9 @@
                                   <td>   </td>
                                   <td>   </td>
                                   <td><button type="button" class="btn btn-default"><%= link_to "Trouver d'autres châtons", root_path %></button></td>
+                                  <% if @count > 0 %>
                                   <td><button type="button" class="btn btn-success"><%= link_to "Passer commande", new_user_order_path %></button></td>
+                                  <% end %>
                               </tr>
                           </tbody>
                       </table>

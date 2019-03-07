@@ -4,8 +4,7 @@ require 'faker'
 RSpec.describe Item, type: :model do
 
 before(:each) do
-@category = Category.create(name: Faker::Lorem.characters(6))
-@item = Item.create(title: Faker::Lorem.characters(6), description: Faker::ChuckNorris.fact, price: rand(1..1000), category_id: @category.id)
+@item = Item.create(title: Faker::Lorem.characters(6), description: Faker::ChuckNorris.fact, price: rand(1..1000))
 end
 
 context "validation" do
@@ -25,7 +24,7 @@ context "validation" do
   end
 end
 context "associations" do
-    it { should have_many :purchases}
+    it { should have_many :carts}
     end
 
 

@@ -3,7 +3,7 @@ class Order < ApplicationRecord
 
 def order_email
   UserMailer.order_email(self).deliver_now
-  AdminMailer.order_email(self).deliver_now
+  #AdminMailer.order_email(self).deliver_now
 end
 
 end

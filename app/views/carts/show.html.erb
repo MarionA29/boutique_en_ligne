@@ -1,5 +1,7 @@
+
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 
@@ -13,7 +15,9 @@
                                   <th> </th>
                                   <th> </th>
                                   <th> </th>
+                                  <th> </th>
                                   <th class="text-center">Price</th>
+                                  <th class="text-center">Remove</th>
                                   <th> </th>
                               </tr>
                           </thead>
@@ -33,15 +37,15 @@
                                   <td> </td>
                                   <td> </td>
                                   <td> </td>
-
+                                  <td> </td>
                                   <td class="col-sm-1 col-md-1 text-center"><%= item.item.price %></td>
 
-                                  <td><%= link_to "X", cart_item_path(item.item.id), :method => 'delete', style:"color:red;font-weight:600;"%></td>
+                                  <td class="text-center"><%= link_to "X", cart_item_path(item.item.id), :method => 'delete', style:"color:red;font-weight:600;"%></td>
                               </tr>
                               <% end %>
 
                               <tr>
-
+                                  <td>   </td>
                                   <td>   </td>
                                   <td>   </td>
                                   <td>   </td>
@@ -54,8 +58,9 @@
                                   <td>   </td>
                                   <td>   </td>
                                   <td>   </td>
-                                  <td><button type="button" class="btn btn-default"><%= link_to "Trouver d'autres châtons", root_path %></button></td>
-                                  <td><button type="button" class="btn btn-success"><%= link_to "Passer commande", new_user_order_path %></button></td>
+                                  <td>   </td>
+                                  <td><button type="button" class="btn btn-default"><%= link_to "Trouver d'autres châtons", root_path, style:"color:black;" %></button></td>
+                                  <td><button type="button" class="btn btn-success"><%= link_to "Passer commande", new_user_order_path, style:"color:white;" %></button></td>
                               </tr>
                           </tbody>
                       </table>

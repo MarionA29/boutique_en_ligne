@@ -35,7 +35,8 @@
                                   <td> </td>
 
                                   <td class="col-sm-1 col-md-1 text-center"><%= item.item.price %></td>
-                                  <td class="col-sm-1 col-md-1"><button type="button" class ="pull-right"> Remove </button></td>
+
+                                  <td><%= link_to "X", cart_item_path(item.item.id), :method => 'delete', style:"color:red;font-weight:600;"%></td>
                               </tr>
                               <% end %>
 
